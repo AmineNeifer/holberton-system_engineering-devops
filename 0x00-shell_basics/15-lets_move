@@ -1,2 +1,2 @@
 #!/bin/bash
-cp [[:upprt:]]* /tmp/u
+mv [[:upprt:]]* /tmp/u

@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -la > ms_cwd_content
+ls -la >> ms_cwd_content

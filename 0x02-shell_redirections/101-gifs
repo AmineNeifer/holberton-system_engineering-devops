@@ -1,2 +1,2 @@
-B#!/bin/bash
+#!/bin/bash
 find . -iname ".*.gif" -type f -size 'c' | tr '.gif' '\n'

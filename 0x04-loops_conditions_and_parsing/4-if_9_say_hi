@@ -2,13 +2,13 @@
 #displays Holberton School 8 times, Hi one time and then Holberton school one time
 declare -i i
 i=0
-while [ $i -lt 10 ]
+while [ $i -le 10 ]
 do
-	i=$i+1
 	if [ $i -eq 9 ]
 	then
 		echo "Hi"
 	else
 		echo "Holberton School"
 	fi
+	i=$i+1
 done

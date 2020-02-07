@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#display contents of the current directory without the dash and waht's before it
+for i in *
+do
+	echo "$i" | cut -d "-" -f 2
+done

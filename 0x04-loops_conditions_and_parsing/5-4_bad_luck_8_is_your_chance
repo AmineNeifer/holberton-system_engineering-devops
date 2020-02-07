@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#displays Holberton school, on the fourth line we find bad luck, on eighth line good luck
+declare -i i
+i=0
+while [ $i -lt 10 ]
+do
+	if [ $i -eq 3 ]
+	then
+		echo "bad luck"
+	elif [ $i -eq 7 ]
+	then
+		echo "good luck"
+	else
+		echo "Holberton School"
+	fi
+	i=$i+1
+done

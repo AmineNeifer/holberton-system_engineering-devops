@@ -4,14 +4,14 @@ declare -i minutes
 declare -i hours
 minutes=1
 hours=0
-while [ $minutes -lt 60 ] && [ $hours -le 12 ]
+while [ $hours -le 12 ]
 do
-	echo $minutes
-	if [ $minutes -eq 59 ]
-	then
-		echo "Hour: $hours"
-		hours=$hours+1
-		minutes=1
-	fi
-	minutes=$minutes+1
+	echo "Hour: $hours"
+	minutes=0
+	while [ $minutes -le 59 ]
+	do
+		echo $minutes
+		minutes=$minutes+1
+	done
+	hours=$hours+1
 done

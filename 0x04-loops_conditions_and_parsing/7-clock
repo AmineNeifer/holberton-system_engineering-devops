@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#displays minutes and hours
+declare -i minutes
+declare -i hours
+minutes=1
+hours=0
+while [ $minutes -lt 60 ] && [ $hours -le 12 ]
+do
+	echo $minutes
+	if [ $minutes -eq 59 ]
+	then
+		echo "Hour: $hours"
+		hours=$hours+1
+		minutes=1
+	fi
+	minutes=$minutes+1
+done

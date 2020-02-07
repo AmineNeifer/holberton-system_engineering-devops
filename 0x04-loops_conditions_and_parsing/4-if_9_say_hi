@@ -9,6 +9,6 @@ do
 	then
 		echo "Hi"
 	else
-		echo "Holbertonschool"
+		echo "Holberton school"
 	fi
 done

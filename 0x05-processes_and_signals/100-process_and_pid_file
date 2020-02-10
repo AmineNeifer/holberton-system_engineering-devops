@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # stubborn process
-echo `pgrep -n` > /var/run/holbertonscript.pid
+pgrep -n > /var/run/holbertonscript.pid
 
 trap 'echo "I hate the kill command" ; rm /var/run/holbertonscript.pid ; exit' TERM
 trap 'echo "Y U no love me?!"' INT

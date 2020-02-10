@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#infinity loop except is invincible agains SIGTERM
+trap 'echo "I am invincible!!!"' TERM
+while :
+do
+	echo "To infinity and beyond"
+	sleep 2
+done

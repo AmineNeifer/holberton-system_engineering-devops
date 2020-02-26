@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # display all active IPv4 IPs on the machine you're using
+# shellcheck disable=SC1083
 ifconfig | grep 'inet addr:' | awk {'print $2'} | cut -d ':' -f 2

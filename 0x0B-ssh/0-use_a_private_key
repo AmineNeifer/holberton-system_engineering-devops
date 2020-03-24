@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# connect through holberton identity file
+ssh -i ~/.ssh/holberton

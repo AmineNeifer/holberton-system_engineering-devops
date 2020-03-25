@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # install and set up Nginx
-sudo apt install -y nginx
+apt install -y nginx
+chmod -R 755 /var/www
 echo "Holberton School" > /var/www/html/index.nginx-debain.html

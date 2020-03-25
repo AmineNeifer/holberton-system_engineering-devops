@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # install and set up Nginx
-apt install -y nginx
+apt-get -y update
+apt-get -y install nginx
 ufw allow 'Nginx HTTP'
-sudo chown -R ubuntu:ubuntu /var/www/
-sudo chown -R ubuntu:ubuntu /etc/nginx
 echo "Holberton School" > /var/www/html/index.nginx-debain.html
 service nginx start

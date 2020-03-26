@@ -2,6 +2,7 @@
 # install and set up Nginx
 sudo apt-get -y update
 sudo apt-get -y install nginx
+sudo chown -R ubuntu:ubuntu /var/www
 sudo echo "Holberton School" > /var/www/html/index.nginx-debain.html
 sudo echo "Holberton School" > /usr/share/nginx/html/index.html
 sudo service nginx start

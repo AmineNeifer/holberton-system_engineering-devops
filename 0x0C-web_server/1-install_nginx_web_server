@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # install and set up Nginx
 sudo apt-get -y update
+sudo apt-get -y upgrade
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 sudo chown -R ubuntu:ubuntu /var/www

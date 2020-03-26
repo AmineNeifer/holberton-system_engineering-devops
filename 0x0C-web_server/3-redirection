@@ -2,5 +2,6 @@
 #redirect permanently
 apt-get -y update
 apt-get -y install nginx
-systemctl restart nginx
+systemctl start nginx
 sed -i "/^[[:space:]]# SSL configuration$/i rewrite ^/redirect_me$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
+systemctl restart nginx

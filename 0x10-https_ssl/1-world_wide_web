@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # display descriptions about the domain/subdomain entered
 subdomain () {
+    sub=$(echo "$1" | awk -F "." '{print $1}')
     record=$(dig "$1" | grep -A1 'ANSWER SECTION:' | awk 'NR>1' | awk -F ' ' '{print $4}')
-    destination=$(dig "$1" | grep -A1 'ANSWER SECTION:' | awk 'NR>1' | awk -F ' ' '{print $5}')
-    echo "The subdomain $1 is a $record record and points to $destination"
+    destination=$(dig $1 | grep -A1 'ANSWER SECTION:' | awk 'NR>1' | awk -F ' ' '{print $5}')
+    echo "The subdomain $sub is a $record record and points to $destination"
 }
 domain () {
     subdomain "www.$1"
@@ -22,7 +23,10 @@ check_subdomain () {
     fi
 }
 check_subdomain "$1"
-if [ "$res" == "dom" ]
+if [ $# -eq 2 ]
+then
+    subdomain "$2.$1"
+elif [ "$res" == "dom" ]
 then
     domain $1
 else

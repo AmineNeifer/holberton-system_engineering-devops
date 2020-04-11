@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# run whoami with anoza uza
+runuser -l  "$1" -c 'whoami'

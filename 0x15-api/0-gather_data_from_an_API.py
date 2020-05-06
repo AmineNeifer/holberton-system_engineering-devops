@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-use RESTapi to return information
+use RESTapi to return information needed.
 """
 import requests
 from sys import argv

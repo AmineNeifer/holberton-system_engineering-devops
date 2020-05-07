@@ -5,11 +5,7 @@ get title of the hottest 10 posts of a subreddit.
 import requests
 
 
-def recurse(subreddit, hot_list=[]):
-    recurse_helper(subreddit, [])
-
-
-def recurse_helper(subreddit, hot_list=[], name=""):
+def recurse(subreddit, hot_list=[], name=""):
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     r = requests.get(
         url,
@@ -17,12 +13,10 @@ def recurse_helper(subreddit, hot_list=[], name=""):
         allow_redirects=False,
         params={"after": name}).json()
     try:
+        if r["data"]["children"] == []:
+            return hot_list
         for item in r["data"]["children"]:
-            if item["data"]["title"] == []:
-                return hot_list
             hot_list.append(item["data"]["title"])
-            print("----------------\n{}\n----------------".format(item["data"]["title"]))
     except KeyError:
         return None
-    return recurse_helper(subreddit, hot_list, item["data"]["name"])
-
+    return recurse(subreddit, hot_list, item["data"]["name"])
